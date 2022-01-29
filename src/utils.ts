@@ -1,3 +1,7 @@
+import { GraphType } from "./common/enums";
+import DOTGraphFactory from "./dotgraph";
+import { BinaryTree } from "./tree";
+
 export function buildGraphDOT(nodes: number[][]) {
   const edgeMap = {};
   let initialStr = `graph G {`;
@@ -15,4 +19,32 @@ export function buildGraphDOT(nodes: number[][]) {
   }
 
   return initialStr + `}`;
+}
+
+export function buildDOT(nodes: any, type: GraphType) {
+  if (type === GraphType.TREE) {
+    const tree = new BinaryTree(nodes);
+    const queue = [tree.root];
+    const treeDOTGraph = DOTGraphFactory(GraphType.TREE);
+
+    while (queue.length) {
+      for (let i = 0; i < queue.length; i++) {
+        const curNode = queue.shift();
+
+        treeDOTGraph.addNode(curNode.val);
+
+        if (curNode.left) {
+          treeDOTGraph.addEdge(curNode.val, curNode.left.val);
+          queue.push(curNode.left);
+        }
+
+        if (curNode.right) {
+          treeDOTGraph.addEdge(curNode.val, curNode.right.val);
+          queue.push(curNode.right);
+        }
+      }
+    }
+
+    return treeDOTGraph.getDOTStr();
+  }
 }

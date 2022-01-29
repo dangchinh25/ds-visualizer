@@ -3,8 +3,7 @@ const Viz = require("viz.js");
 import * as fs from "fs";
 
 import { GraphType } from "../common/enums";
-import DOTGraphFactory from "../dotgraph";
-import { BinaryTree } from "../tree";
+import { buildDOT } from "../utils";
 import BaseVisualizer from "./base";
 
 export default class TreeVisualizer extends BaseVisualizer {
@@ -16,29 +15,9 @@ export default class TreeVisualizer extends BaseVisualizer {
   }
 
   visualize(outputDir: string): void {
-    const tree = new BinaryTree(this.nodes);
-    const queue = [tree.root];
-    const treeDOTGraph = DOTGraphFactory(GraphType.TREE);
+    const dotGraph = buildDOT(this.nodes, GraphType.TREE);
 
-    while (queue.length) {
-      for (let i = 0; i < queue.length; i++) {
-        const curNode = queue.shift();
-
-        treeDOTGraph.addNode(curNode.val);
-
-        if (curNode.left) {
-          treeDOTGraph.addEdge(curNode.val, curNode.left.val);
-          queue.push(curNode.left);
-        }
-
-        if (curNode.right) {
-          treeDOTGraph.addEdge(curNode.val, curNode.right.val);
-          queue.push(curNode.right);
-        }
-      }
-    }
-
-    const outputContent = Viz(treeDOTGraph.getDOTStr(), {
+    const outputContent = Viz(dotGraph, {
       format: "svg",
       engine: "dot"
     });
