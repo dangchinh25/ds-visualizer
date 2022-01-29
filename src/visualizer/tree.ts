@@ -23,4 +23,15 @@ export default class TreeVisualizer extends BaseVisualizer {
     });
     fs.writeFileSync(outputDir, outputContent);
   }
+
+  generateSVG(): string {
+    const dotGraph = buildDOT(this.nodes, GraphType.TREE);
+
+    const outputContent = Viz(dotGraph, {
+      format: "svg",
+      engine: "dot"
+    });
+
+    return outputContent;
+  }
 }

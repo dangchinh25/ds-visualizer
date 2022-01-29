@@ -23,4 +23,15 @@ export default class GraphVisualizer extends BaseVisualizer {
     });
     fs.writeFileSync(outputDir, outputContent);
   }
+
+  generateSVG(): string {
+    const dotGraph = buildDOT(this.nodes, GraphType.GRAPH);
+
+    const outputContent = Viz(dotGraph, {
+      format: "svg",
+      engine: "dot"
+    });
+
+    return outputContent;
+  }
 }
