@@ -1,6 +1,6 @@
 import { GraphType } from "./common/enums";
 import DOTGraphFactory from "./dotgraph";
-import { BinaryTree } from "./tree";
+import { BinaryTree } from "./datastructure/tree";
 
 export function buildGraphDOT(nodes: number[][]) {
   const graphDOTgraph = DOTGraphFactory(GraphType.GRAPH);
