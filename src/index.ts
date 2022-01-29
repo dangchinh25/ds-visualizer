@@ -1,4 +1,5 @@
 import TreeVisualizer from "./visualizer/tree";
+import GraphVisualizer from "./visualizer/graph";
 
 const simpleTree = [3, 9, 20, null, null, 15, 7];
 const simpleGraph = [
@@ -10,5 +11,8 @@ const simpleGraph = [
 
 const outputDir = "output/dot.svg";
 
-const tree = new TreeVisualizer(simpleTree);
-tree.visualize(outputDir);
+// const tree = new TreeVisualizer(simpleTree);
+// tree.visualize(outputDir);
+
+const graph = new GraphVisualizer(simpleGraph);
+graph.visualize(outputDir);
