@@ -1,8 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const Viz = require("viz.js");
-import * as fs from "fs";
-
-import { buildDOT, buildGraphDOT } from "./utils";
+import TreeVisualizer from "./visualizer/tree";
 
 const simpleTree = [3, 9, 20, null, null, 15, 7];
 const simpleGraph = [
@@ -12,14 +8,7 @@ const simpleGraph = [
   [0, 2]
 ];
 
-console.log(buildGraphDOT(simpleGraph));
+const outputDir = "output/dot.svg";
 
-function dot(outputPath) {
-  const outputContent = Viz(buildDOT(simpleTree), {
-    format: "svg",
-    engine: "dot"
-  });
-  fs.writeFileSync(outputPath, outputContent);
-}
-
-dot("output/dot.svg");
+const tree = new TreeVisualizer(simpleTree);
+tree.visualize(outputDir);
