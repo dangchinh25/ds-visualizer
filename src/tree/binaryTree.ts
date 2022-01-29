@@ -13,8 +13,8 @@ export default class BinaryTree {
 
   static buildTree(nodes: number[]): TreeNode {
     let nodeIndex = 0;
-    let root = new TreeNode(nodes[nodeIndex]);
-    let queue = [root];
+    const root = new TreeNode(nodes[nodeIndex]);
+    const queue = [root];
 
     while (queue.length) {
       for (let i = 0; i < queue.length; i++) {
