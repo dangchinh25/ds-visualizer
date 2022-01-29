@@ -1,4 +1,4 @@
-import GraphNode from "./graphNode"
-import Graph from "./graph"
+import GraphNode from "./graphNode";
+import Graph from "./graph";
 
-export {Graph, GraphNode}
+export { Graph, GraphNode };
