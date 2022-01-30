@@ -35,7 +35,7 @@ tree.visualize("output/tree.svg");
 
 // A tree.svg file will be generate with the visualization of the data structure
 ```
-<img src="docs/asset/tree.svg">
+<img src="https://gist.githubusercontent.com/dangchinh25/0fe5ef3101daca1701084fb3af597f19/raw/39ebdc504d7170680c749b1d30a2363078ff2591/tree.svg">
 
 #### Graph
 ```js
@@ -53,4 +53,4 @@ graph.visualize("output/graph.svg");
 
 // A graph.svg file will be generate with the visualization of the data structure
 ```
-<img src="docs/asset/graph.svg">
+<img src="https://gist.githubusercontent.com/dangchinh25/0fe5ef3101daca1701084fb3af597f19/raw/b994638bff8b2b0a13777e8b2f15b07b08666bfa/graph.svg">

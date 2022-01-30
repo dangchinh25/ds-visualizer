@@ -1,6 +1,6 @@
 {
   "name": "ds-visualizer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generate visualization of complex datastructure on the fly",
   "main": "dist/index.js",
   "types": "dist/index.t.ts",
@@ -19,6 +19,10 @@
     "datastructure",
     "visualization"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dangchinh25/ds-visualizer.git"
+  },
   "author": "Chinh Le",
   "license": "ISC",
   "dependencies": {
