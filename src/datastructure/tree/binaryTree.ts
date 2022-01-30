@@ -36,4 +36,49 @@ export default class BinaryTree {
 
     return root;
   }
+
+  preorderTraversal() {
+    const nodeVals: number[] = [];
+    this.preorderHelper(this.root, nodeVals);
+
+    return nodeVals;
+  }
+
+  inorderTraversal() {
+    const nodeVals: number[] = [];
+    this.inorderHelper(this.root, nodeVals);
+
+    return nodeVals;
+  }
+
+  postorderTraversal() {
+    const nodeVals: number[] = [];
+    this.postorderHelper(this.root, nodeVals);
+
+    return nodeVals;
+  }
+
+  private preorderHelper(node: TreeNode, current: number[]) {
+    if (node) {
+      current.push(node.val);
+      this.preorderHelper(node.left, current);
+      this.preorderHelper(node.right, current);
+    }
+  }
+
+  private inorderHelper(node: TreeNode, current: number[]) {
+    if (node) {
+      this.preorderHelper(node.left, current);
+      current.push(node.val);
+      this.preorderHelper(node.right, current);
+    }
+  }
+
+  private postorderHelper(node: TreeNode, current: number[]) {
+    if (node) {
+      this.preorderHelper(node.left, current);
+      this.preorderHelper(node.right, current);
+      current.push(node.val);
+    }
+  }
 }
