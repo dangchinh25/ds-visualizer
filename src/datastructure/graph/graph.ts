@@ -2,8 +2,7 @@
 const Viz = require("viz.js");
 import fs from "fs";
 
-import { GraphType } from "../../common/enums";
-import DOTGraphFactory from "../../dotgraph";
+import { GraphDOTGraph } from "../../dotgraph";
 import GraphNode from "./graphNode";
 
 interface NodeMap {
@@ -70,7 +69,7 @@ export default class Graph {
   }
 
   private buildDOT() {
-    const graphDOTgraph = DOTGraphFactory(GraphType.GRAPH);
+    const graphDOTgraph = new GraphDOTGraph();
 
     for (let i = 0; i < this.nodes.length; i++) {
       graphDOTgraph.addNode(i);

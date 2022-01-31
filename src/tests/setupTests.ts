@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-global.beforeEach(() => {
+global.afterAll(() => {
   const outputDir = "src/tests/output";
 
   fs.readdir(outputDir, (err, files) => {
