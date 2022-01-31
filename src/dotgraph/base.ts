@@ -5,8 +5,8 @@ export default abstract class BaseDOTGraph {
     this.dotStr = initialStr;
   }
 
-  abstract addEdge(startNode: number | string, endNode: number | string): void;
-  abstract addNode(node: number | string): void;
+  abstract addEdge(startNode: any, endNode: any): void;
+  abstract addNode(node: any): void;
 
   getDOTStr() {
     return this.dotStr + `}`;

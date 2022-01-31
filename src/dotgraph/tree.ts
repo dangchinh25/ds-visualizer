@@ -1,3 +1,4 @@
+import { TreeNode } from "../dataStructure/tree";
 import BaseDOTGraph from "./base";
 
 export default class TreeDOTGraph extends BaseDOTGraph {
@@ -5,10 +6,10 @@ export default class TreeDOTGraph extends BaseDOTGraph {
     super(`digraph G {`);
   }
 
-  addEdge(startNode: string | number, endNode: string | number): void {
-    this.dotStr += `${startNode} -> ${endNode};`;
+  addEdge(startNode: TreeNode, endNode: TreeNode): void {
+    this.dotStr += `${startNode.id} -> ${endNode.id};`;
   }
-  addNode(node: string | number): void {
-    this.dotStr += `${node};`;
+  addNode(node: TreeNode): void {
+    this.dotStr += `${node.id} [label="${node.val}"];`;
   }
 }

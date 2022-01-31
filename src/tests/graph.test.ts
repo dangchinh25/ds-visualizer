@@ -1,4 +1,4 @@
-import GraphVisualizer from "../../visualizer/graph";
+import { Graph } from "../dataStructure/index";
 import fs from "fs";
 
 test("Binary Tree visualization", () => {
@@ -9,7 +9,7 @@ test("Binary Tree visualization", () => {
     [0, 2]
   ];
   const outputDir = "src/tests/output/graph.svg";
-  const graph = new GraphVisualizer(simpleGraph);
+  const graph = new Graph(simpleGraph);
   graph.visualize(outputDir);
 
   expect(fs.readFileSync(outputDir));
