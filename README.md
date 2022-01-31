@@ -1,6 +1,6 @@
 # ds-visualizer
 
-Generate visualization of complex datastructure on the fly
+Generate visualization of complex data structure on the fly
 
 ## Table of contents
 - [Features](#features)
@@ -26,11 +26,11 @@ $ yarn add ds-visualizer
 ### note: CommonJS usage
 #### Tree
 ```js
-const { TreeVisualizer } = require("ds-visualizer");
+const { BinaryTree } = require("ds-visualizer");
 
 const simpleTree = [3, 9, 20, null, null, 15, 7, 8];
 
-const tree = new TreeVisualizer(simpleTree);
+const tree = new BinaryTree(simpleTree);
 tree.visualize("output/tree.svg");
 
 // A tree.svg file will be generate with the visualization of the data structure
@@ -39,7 +39,7 @@ tree.visualize("output/tree.svg");
 
 #### Graph
 ```js
-const { GraphVisualizer } = require("ds-visualizer");
+const { Graph } = require("ds-visualizer");
 
 const simpleGraph = [
   [1, 3],
@@ -48,9 +48,12 @@ const simpleGraph = [
   [0, 2]
 ];
 
-const graph = new GraphVisualizer(simpleGraph);
+const graph = new Graph(simpleGraph);
 graph.visualize("output/graph.svg");
 
 // A graph.svg file will be generate with the visualization of the data structure
 ```
 <img src="https://gist.githubusercontent.com/dangchinh25/0fe5ef3101daca1701084fb3af597f19/raw/b994638bff8b2b0a13777e8b2f15b07b08666bfa/graph.svg">
+
+## Credits
+This project is heavily inspired by the [python package](https://pypi.org/project/dsplot/) written by [Bill Tran](https://github.com/billtrn). Please check out his work if you ever use Python.
