@@ -1,4 +1,4 @@
-import TreeVisualizer from "./visualizer/tree";
-import GraphVisualizer from "./visualizer/graph";
+import { BinaryTree } from "./dataStructure/tree";
+import { Graph } from "./dataStructure/graph";
 
-export { TreeVisualizer, GraphVisualizer };
+export { BinaryTree, Graph };
