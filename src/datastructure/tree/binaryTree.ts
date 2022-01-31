@@ -1,3 +1,9 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const Viz = require("viz.js");
+import fs from "fs";
+
+import { GraphType } from "../../common/enums";
+import DOTGraphFactory from "../../dotgraph";
 import TreeNode from "./treeNode";
 
 export default class BinaryTree {
@@ -80,5 +86,51 @@ export default class BinaryTree {
       this.preorderHelper(node.right, current);
       current.push(node.val);
     }
+  }
+
+  private buildDOT() {
+    const queue = [this.root];
+    const treeDOTGraph = DOTGraphFactory(GraphType.TREE);
+
+    while (queue.length) {
+      for (let i = 0; i < queue.length; i++) {
+        const curNode = queue.shift();
+
+        treeDOTGraph.addNode(curNode.val);
+
+        if (curNode.left) {
+          treeDOTGraph.addEdge(curNode.val, curNode.left.val);
+          queue.push(curNode.left);
+        }
+
+        if (curNode.right) {
+          treeDOTGraph.addEdge(curNode.val, curNode.right.val);
+          queue.push(curNode.right);
+        }
+      }
+    }
+
+    return treeDOTGraph.getDOTStr();
+  }
+
+  visualize(outputDir: string): void {
+    const dotGraph = this.buildDOT();
+
+    const outputContent = Viz(dotGraph, {
+      format: "svg",
+      engine: "dot"
+    });
+    fs.writeFileSync(outputDir, outputContent);
+  }
+
+  generateSVG(): string {
+    const dotGraph = this.buildDOT();
+
+    const outputContent = Viz(dotGraph, {
+      format: "svg",
+      engine: "dot"
+    });
+
+    return outputContent;
   }
 }
