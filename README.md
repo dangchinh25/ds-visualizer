@@ -57,3 +57,6 @@ graph.visualize("output/graph.svg");
 
 ## Credits
 This project is heavily inspired by the [python package](https://pypi.org/project/dsplot/) written by [Bill Tran](https://github.com/billtrn). Please check out his work if you ever use Python.
+
+## License
+[MIT](LICENSE)
