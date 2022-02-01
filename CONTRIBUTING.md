@@ -22,10 +22,10 @@ Thank you everyone for taking the time to contribute, any contributions is much 
 ## Code Walkthrough
 - The core of the project is implemented in `src/dataStructure`
 - E.g:
--- In `src/dataStructure/binaryTree.ts`, we implementes `Binary Tree ` class
--- `Binary Tree` class defines its own `buildDOT` method that return `DOT string`, which will be used by `visualize` and `generateSVG` method.
--- The `buildDOT` method goes through the data structure and utilizes the helper class defines in `src/dotGraph` to create the `DOT string`
-- Every new data structure has to `extends` the `BaseVisualizer` class defined in `src/dataStructure/base.ts`
+    - In `src/dataStructure/binaryTree.ts`, we implementes `Binary Tree ` class
+    - `Binary Tree` class defines its own `buildDOT` method that return `DOT string`, which will be used by `visualize` and `generateSVG` method.
+    - The `buildDOT` method goes through the data structure and utilizes the helper class defines in `src/dotGraph` to create the `DOT string`
+- Every new data structure has to `extends` the `BaseVisualizer` class defined in `src/dataStructure/base.ts` and implements its own `buildDOT`, `visualize`, and `generateSVG`.
 
 ## Current Issues
 - Add more data structure, e.g `Binary Search Tree`, `Directed Graph`, `Matrix`, etc.
