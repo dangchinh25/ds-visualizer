@@ -24,8 +24,11 @@
     "type": "git",
     "url": "https://github.com/dangchinh25/ds-visualizer.git"
   },
+  "bugs": {
+    "url": "https://github.com/dangchinh25/ds-visualizer/issues"
+  },
   "author": "Chinh Le",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "viz.js": "^1.3.0"
   },

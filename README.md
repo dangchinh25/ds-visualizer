@@ -58,5 +58,9 @@ graph.visualize("output/graph.svg");
 ## Credits
 This project is heavily inspired by the [python package](https://pypi.org/project/dsplot/) written by [Bill Tran](https://github.com/billtrn). Please check out his work if you ever use Python.
 
+## Contributing
+
+For more info on how to contribute to ds-visualizer, see the [docs](./CONTRIBUTING.md).
+
 ## License
 [MIT](LICENSE)

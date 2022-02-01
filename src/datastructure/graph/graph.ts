@@ -3,13 +3,14 @@ const Viz = require("viz.js");
 import fs from "fs";
 
 import { GraphDOTGraph } from "../../dotgraph";
+import BaseVisualizer from "../base";
 import GraphNode from "./graphNode";
 
 interface NodeMap {
   [key: string | number]: GraphNode;
 }
 
-export default class Graph {
+export default class Graph extends BaseVisualizer {
   // nodes: GraphNode[];
   // root: GraphNode;
 
@@ -44,6 +45,7 @@ export default class Graph {
   nodes: number[][];
 
   constructor(nodes: number[][]) {
+    super();
     this.nodes = nodes;
   }
 
@@ -68,7 +70,7 @@ export default class Graph {
     return outputContent;
   }
 
-  private buildDOT() {
+  protected buildDOT() {
     const graphDOTgraph = new GraphDOTGraph();
 
     for (let i = 0; i < this.nodes.length; i++) {

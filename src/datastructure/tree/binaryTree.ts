@@ -3,12 +3,14 @@ const Viz = require("viz.js");
 import fs from "fs";
 
 import { TreeDOTGraph } from "../../dotgraph";
+import BaseVisualizer from "../base";
 import TreeNode from "./treeNode";
 
-export default class BinaryTree {
+export default class BinaryTree extends BaseVisualizer {
   root: TreeNode;
 
   constructor(nodes: number[]) {
+    super();
     if (!nodes) {
       throw Error("The tree must have at least 1 node.");
     }
@@ -44,7 +46,7 @@ export default class BinaryTree {
     return root;
   }
 
-  private buildDOT() {
+  protected buildDOT() {
     const queue = [this.root];
     const treeDOTGraph = new TreeDOTGraph();
 
