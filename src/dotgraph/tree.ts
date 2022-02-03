@@ -1,4 +1,4 @@
-import { TreeNode } from "../dataStructure/tree";
+import { TreeNode } from "../data-structure/tree";
 import BaseDOTGraph from "./base";
 
 export default class TreeDOTGraph extends BaseDOTGraph {

@@ -1,4 +1,4 @@
-import { BinaryTree } from "../dataStructure";
+import { BinaryTree } from "../data-structure";
 import fs from "fs";
 
 test("Binary Tree visualization", () => {

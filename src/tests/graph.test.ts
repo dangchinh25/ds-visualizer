@@ -1,4 +1,4 @@
-import { Graph } from "../dataStructure/index";
+import { Graph } from "../data-structure/index";
 import fs from "fs";
 
 test("Binary Tree visualization", () => {
