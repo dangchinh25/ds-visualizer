@@ -3,7 +3,7 @@
   "version": "1.0.5",
   "description": "Generate visualization of complex data structure on the fly",
   "main": "dist/index.js",
-  "types": "dist/index.t.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*"
   ],
