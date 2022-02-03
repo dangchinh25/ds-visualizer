@@ -59,18 +59,7 @@ export default class Graph extends BaseVisualizer {
     fs.writeFileSync(outputDir, outputContent);
   }
 
-  generateSVG(): string {
-    const dotGraph = this.buildDOT();
-
-    const outputContent = Viz(dotGraph, {
-      format: "svg",
-      engine: "dot"
-    });
-
-    return outputContent;
-  }
-
-  protected buildDOT() {
+  buildDOT() {
     const graphDOTgraph = new GraphDOTGraph();
 
     for (let i = 0; i < this.nodes.length; i++) {

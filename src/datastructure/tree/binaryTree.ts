@@ -46,7 +46,7 @@ export default class BinaryTree extends BaseVisualizer {
     return root;
   }
 
-  protected buildDOT() {
+  buildDOT() {
     const queue = [this.root];
     const treeDOTGraph = new TreeDOTGraph();
 
@@ -79,17 +79,6 @@ export default class BinaryTree extends BaseVisualizer {
       engine: "dot"
     });
     fs.writeFileSync(outputDir, outputContent);
-  }
-
-  generateSVG(): string {
-    const dotGraph = this.buildDOT();
-
-    const outputContent = Viz(dotGraph, {
-      format: "svg",
-      engine: "dot"
-    });
-
-    return outputContent;
   }
 
   preorderTraversal() {
